@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: rgb(93, 159, 159);
+      display: flex;
+      justify-content: center;
+    }
+    main {
+      background-color: rgba(234, 236, 237, 0.427);
+      text-align: center;
+      width: 90%;
+      margin-top: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(30px);
+    }
+    main .text {
+      padding: 20px;
+    }
+    .text p {
+      opacity: 0.6;
+    }
+    .cardSection {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      justify-items: center;
+      padding: 20px;
+      row-gap: 25px;
+      column-gap: 15px;
+    }
+    .card {
+      text-align: left;
+      padding: 10px;
+      border-radius: 15px;
+      background-color: #fff;
+      min-width: 55vw;
+      max-width: 550px;
+      height: 60vh;
+    }
+    .card .title {
+      padding: 5px;
+      font-size: 2em;
+      font-weight: 700;
+    }
+    .title i {
+      margin: 0 7px 0 7px;
+    }
+    .card p {
+      opacity: 0.5;
+    }
+    .card .options {
+      border-bottom: 1px dashed #010101;
+      height: 40%;
+    }
+    .options ul li {
+      list-style: none;
+      padding: 5px;
+    }
+    .pricing {
+      margin-left: 10px;
+    }
+    .pricing span {
+      font-size: x-small;
+      font-weight: 800;
+      opacity: 0.5;
+    }
+    .card button {
+      margin: 10px;
+      padding: 10px;
+      width: 90%;
+      background-color: rgba(57, 232, 63, 0.6);
+      border: none;
+      cursor: pointer;
+      color: rgba(79, 57, 157, 0.9);
+      font-size: 1.2em;
+      font-weight: 800;
+      border-radius: 15px;
+    }
+    .active {
+      background-color: #252b49;
+      color: #fff;
+      transition: background-color 1s ease, transform 1s ease;
+    }
+    .active > button {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="text">
+      <h1>Choose the right <b>plan</b> for you</h1>
+      <p>Any plan will give you a <strong>30-day trial</strong></p>
+    </div>
+    <div class="cardSection">
+      <div class="card">
+        <div class="title">
+          <i class="fa-solid fa-chess-pawn"></i> Pawn
+        </div>
+        <p>Benefits you will get</p>
+        <div class="options">
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem, ipsum dolor.</li>
+          </ul>
+        </div>
+        <div class="pricing">
+          <h3>Always Free</h3>
+        </div>
+        <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+      </div>
+      <div class="card">
+        <div class="title">
+          <i class="fa-solid fa-chess-rook"></i> Rook
+        </div>
+        <p>Benefits you will get</p>
+        <div class="options">
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem, ipsum dolor.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet consectetur.</li>
+          </ul>
+        </div>
+        <div class="pricing">
+          <h3>200<i class="fa-solid fa-ruble-sign"></i> <span>/month</span></h3>
+        </div>
+        <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+      </div>
+      <div class="card">
+        <div class="title">
+          <i class="fa-solid fa-chess-queen"></i> Queen
+        </div>
+        <p>Benefits you will get</p>
+        <div class="options">
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem, ipsum dolor.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet consectetur.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+            <li><span class="fa-li"><i class="fa-solid fa-circle-check"></i></span> Lorem, ipsum.</li>
+          </ul>
+        </div>
+        <div class="pricing">
+          <h3>450<i class="fa-solid fa-ruble-sign"></i> <span>/month</span></h3>
+        </div>
+        <button class="btn--choose btn" onclick="selectBtn()">Choose</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    function selectBtn() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.classList.remove('active');
+      });
+      const selectedCard = event.target.closest('.card');
+      selectedCard.classList.add('active');
+    }
+  </script>
+</body>
+</html>   
